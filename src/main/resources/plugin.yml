@@ -1,5 +1,5 @@
 api-version: 1.13
-name: MyGame
-main: fun.kaituo.MyGame
+name: OresRush
+main: fun.kaituo.oresrush.OresRush
 version: 1.0
-depend: [GameUtils]
+depend: [GameUtils, ProtocolLib]

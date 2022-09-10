@@ -3,7 +3,6 @@ package fun.kaituo.oresrush;
 import com.comphenix.protocol.ProtocolLib;
 import com.comphenix.protocol.ProtocolLibrary;
 import fun.kaituo.Game;
-import fun.kaituo.oresrush.generator.SimpleChunkGenerator;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
@@ -26,17 +25,15 @@ public class OresRushGame extends Game implements Listener {
     private Scoreboard mainScoreboard;
     private Scoreboard sidebarScoreboard;
     //private
-
-    private static final OresRushGame instance = new OresRushGame((OresRush) Bukkit.getPluginManager().getPlugin("OresRush"));
-
-
+    
+    private static final OresRushGame instance = new OresRushGame((OresRush)Bukkit.getPluginManager().getPlugin("OresRush"));
+    
+    
     private OresRushGame(OresRush plugin) {
         this.plugin = plugin;
         players = plugin.players;
-        initializeGame(plugin, "MyGame", "§eMyGame",
-                new Location(world, 0, 89, 0), new BoundingBox(0, 0, 0, 0, 0, 0));
-        initializeButtons(new Location(world, 0,0,0), BlockFace.NORTH,
-                new Location(world, 0,0,0), BlockFace.EAST);
+        initializeGame(plugin, "MyGame", "§eMyGame", new Location(world, 0, 89, 0), new BoundingBox(0, 0, 0, 0, 0, 0));
+        initializeButtons(new Location(world, 0, 0, 0), BlockFace.NORTH, new Location(world, 0, 0, 0), BlockFace.EAST);
         initializeGameRunnable();
         redTeam = new ArrayList<>();
         blueTeam = new ArrayList<>();
@@ -51,8 +48,7 @@ public class OresRushGame extends Game implements Listener {
             mainScoreboard.getTeam("orushblue").setColor(ChatColor.BLUE);
         }
     }
-
-
+    
     public static OresRushGame getInstance() {
         return instance;
     }
@@ -80,13 +76,13 @@ public class OresRushGame extends Game implements Listener {
     
     @Override
     protected void savePlayerQuitData(Player p) throws IOException {
-
+    
     }
-
-
+    
+    
     @Override
     protected void rejoin(Player player) {
-
+    
     }
     
     /*
